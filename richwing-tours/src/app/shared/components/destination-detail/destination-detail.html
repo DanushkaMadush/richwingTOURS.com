@@ -1,4 +1,26 @@
-<article class="content-stack">
-  <h2>{{ destination.name }}</h2>
-  <p>{{ destination.description || destination.summary }}</p>
+<article class="destination-detail" [attr.id]="destination.id">
+  <div class="destination-detail__content content-stack">
+    <p class="destination-detail__eyebrow">Destination</p>
+    <h2>{{ destination.name }}</h2>
+    <p>{{ destination.description || destination.summary }}</p>
+
+    @if (destination.externalLinks?.length) {
+      <div class="destination-detail__links">
+        <span>Discover more:</span>
+        @for (link of destination.externalLinks; track link.url) {
+          <a [href]="link.url" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+        }
+      </div>
+    }
+
+    <a class="destination-detail__cta" routerLink="/contact">Book Now</a>
+  </div>
+
+  @if (destination.detailImages?.length) {
+    <div class="destination-detail__gallery">
+      @for (image of destination.detailImages; track image.src) {
+        <img [src]="image.src" [alt]="image.alt" loading="lazy" />
+      }
+    </div>
+  }
 </article>

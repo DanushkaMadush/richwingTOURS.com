@@ -1,6 +1,23 @@
 <app-page-header title="Destinations" />
-<section class="page-section">
-  <div class="container">
+
+<section class="page-section destinations-overview">
+  <div class="container content-stack">
+    <app-section-heading eyebrow="Destination" title="Explore Top Destination" align="center" />
     <app-destination-grid [destinations]="destinations" />
+  </div>
+</section>
+
+<section class="page-section destinations-details">
+  <div class="container destinations-details__stack">
+    @for (destination of destinations; track destination.id) {
+      <app-destination-detail [destination]="destination" />
+    }
+  </div>
+</section>
+
+<section class="page-section destinations-closing">
+  <div class="container content-stack">
+    <app-section-heading eyebrow="Sri Lanka" [title]="closingSection.title" />
+    <p>{{ closingSection.description }}</p>
   </div>
 </section>

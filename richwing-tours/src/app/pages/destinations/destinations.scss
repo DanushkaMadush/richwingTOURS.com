@@ -1,1 +1,18 @@
+.destinations-overview,
+.destinations-closing {
+  background: var(--color-surface);
+}
 
+.destinations-details__stack {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+.destinations-closing .container {
+  max-width: 52rem;
+}
+
+.destinations-closing p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
