@@ -1,7 +1,10 @@
-<article class="card card__body">
-  <p class="service-card__icon">{{ service.icon }}</p>
-  <h3>{{ service.title }}</h3>
-  <p>{{ service.description }}</p>
+<article class="service-card card card__body">
+  <div class="service-card__icon" aria-hidden="true">{{ service.icon }}</div>
+  <div class="service-card__content">
+    <h3>{{ service.title }}</h3>
+    <p>{{ service.description }}</p>
+  </div>
+
   @if (service.ctaLabel && service.ctaPath) {
     <a [routerLink]="service.ctaPath">{{ service.ctaLabel }}</a>
   }

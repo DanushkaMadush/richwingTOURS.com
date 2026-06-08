@@ -1,1 +1,16 @@
+.services-page {
+  background: var(--color-surface);
+}
 
+.services-page__intro {
+  display: grid;
+  gap: 1rem;
+  margin-inline: auto;
+  max-width: 48rem;
+  text-align: center;
+}
+
+.services-page__intro p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
