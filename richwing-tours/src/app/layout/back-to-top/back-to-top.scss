@@ -2,13 +2,27 @@
   align-items: center;
   background: var(--color-primary);
   border: 0;
-  bottom: 1.5rem;
+  bottom: 2.5rem;
   color: var(--color-background);
   cursor: pointer;
   display: flex;
-  height: 2.75rem;
+  font-size: 1.2rem;
+  height: 2.9rem;
   justify-content: center;
   position: fixed;
-  right: 1.5rem;
-  width: 2.75rem;
+  right: 2.35rem;
+  transition: background-color 0.2s ease;
+  width: 2.9rem;
+  z-index: 50;
+}
+
+.back-to-top:hover {
+  background: #669c27;
+}
+
+@media (max-width: 600px) {
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+  }
 }

@@ -1,7 +1,17 @@
 <div class="top-bar">
   <div class="container top-bar__inner">
-    <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
-    <span>{{ contact.phone }}</span>
-    <app-social-links [links]="socialLinks" />
+    <div class="top-bar__contact">
+      <a [href]="'mailto:' + contact.email">
+        <fa-icon [icon]="emailIcon" aria-hidden="true" />
+        <span>{{ contact.email }}</span>
+      </a>
+      <span class="top-bar__divider" aria-hidden="true"></span>
+      <span class="top-bar__phone">
+        <fa-icon [icon]="phoneIcon" aria-hidden="true" />
+        <span>{{ contact.phone }}</span>
+      </span>
+    </div>
+
+    <app-social-links [links]="socialLinks" variant="icons" />
   </div>
 </div>

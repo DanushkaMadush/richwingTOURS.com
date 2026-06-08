@@ -1,13 +1,64 @@
 .top-bar {
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  font-size: 0.9rem;
+  background: #f7f7f7;
+  color: #656565;
+  font-size: 1rem;
 }
 
 .top-bar__inner {
   align-items: center;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: space-between;
-  min-height: 2.75rem;
+  min-height: 3.15rem;
+}
+
+.top-bar__contact,
+.top-bar__contact a,
+.top-bar__phone {
+  align-items: center;
+  display: flex;
+}
+
+.top-bar__contact {
+  gap: 1rem;
+}
+
+.top-bar__contact a,
+.top-bar__phone {
+  gap: 0.55rem;
+  text-decoration: none;
+}
+
+.top-bar__contact a {
+  color: var(--color-primary);
+}
+
+.top-bar__phone {
+  color: #656565;
+}
+
+.top-bar__contact fa-icon {
+  color: #656565;
+  font-size: 0.95rem;
+}
+
+.top-bar__divider {
+  background: #656565;
+  height: 1.05rem;
+  width: 1px;
+}
+
+@media (max-width: 700px) {
+  .top-bar__inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-top: 0.75rem;
+  }
+
+  .top-bar__contact {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
 }

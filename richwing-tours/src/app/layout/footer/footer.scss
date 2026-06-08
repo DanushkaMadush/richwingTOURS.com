@@ -1,18 +1,95 @@
 .footer {
-  background: var(--color-text);
-  color: var(--color-background);
-  padding: 3rem 0;
+  background: #212121;
+  color: #a8a8a8;
+}
+
+.footer__main {
+  padding: 4.5rem 0 5.75rem;
 }
 
 .footer__grid {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 4rem;
+  grid-template-columns: 1.15fr 1fr 1fr;
 }
 
-.footer a {
-  color: inherit;
-  display: block;
-  margin-bottom: 0.5rem;
+.footer h2 {
+  color: var(--color-background);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1.55rem;
+}
+
+.footer h2 span {
+  color: var(--color-primary);
+}
+
+.footer h3 {
+  color: var(--color-background);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  margin-bottom: 1.6rem;
+  text-transform: uppercase;
+}
+
+.footer__brand p {
+  font-size: 1rem;
+  margin-bottom: 1.65rem;
+}
+
+.footer__links a,
+.footer__contact p {
+  align-items: center;
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.footer__links a {
+  color: #a8a8a8;
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__links a:hover {
+  color: var(--color-primary);
+}
+
+.footer__contact p {
+  color: #a8a8a8;
+}
+
+.footer__links fa-icon,
+.footer__contact fa-icon {
+  color: #a8a8a8;
+  flex: 0 0 auto;
+}
+
+.footer__bottom {
+  border-top: 1px solid #363636;
+  padding: 1.65rem 0;
+}
+
+.footer__bottom a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .footer__grid {
+    gap: 3rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer__main {
+    padding: 3rem 0 3.5rem;
+  }
+
+  .footer h2 {
+    font-size: 2.15rem;
+  }
 }
