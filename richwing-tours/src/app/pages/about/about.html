@@ -1,6 +1,59 @@
 <app-page-header title="About" />
-<section class="page-section">
-  <div class="container">
-    <p>About page foundation. Legacy content is pending migration.</p>
+
+<section class="page-section about-intro">
+  <div class="container about-intro__grid">
+    <div class="about-intro__media">
+      <img class="about-intro__primary" [src]="aboutIntro.primaryImage.src" [alt]="aboutIntro.primaryImage.alt" />
+      <div class="about-intro__thumbs">
+        @for (image of aboutIntro.supportingImages; track image.src) {
+          <img [src]="image.src" [alt]="image.alt" />
+        }
+      </div>
+    </div>
+
+    <div class="about-intro__content content-stack">
+      <app-section-heading [eyebrow]="aboutIntro.eyebrow" [title]="aboutIntro.title" />
+      <p>{{ aboutIntro.description }}</p>
+    </div>
   </div>
 </section>
+
+<section class="page-section about-section about-section--surface">
+  <div class="container content-stack">
+    <app-section-heading eyebrow="Why Choose Us" title="Benefits for every Sri Lankan journey" align="center" />
+    <app-feature-grid [features]="features" />
+  </div>
+</section>
+
+<section class="page-section about-story">
+  <div class="container about-story__grid">
+    <div class="about-story__brand">
+      <p>richwing<span>TOURS</span></p>
+      <strong>Create timeless memories in nature's embrace.</strong>
+    </div>
+
+    <div class="about-story__sections">
+      @for (section of storySections; track section.id) {
+        <article class="about-story__card content-stack" [attr.id]="section.id">
+          <app-section-heading [eyebrow]="section.eyebrow" [title]="section.title" />
+          <p>{{ section.body }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="page-section about-section about-section--surface">
+  <div class="container content-stack">
+    <app-section-heading eyebrow="Gallery" title="Picture Portfolio" align="center" />
+    <app-gallery-grid [images]="galleryImages" />
+  </div>
+</section>
+
+@if (showTravelGuides) {
+  <section class="page-section about-section">
+    <div class="container content-stack">
+      <app-section-heading eyebrow="Guides" title="Our Travel Guides" align="center" />
+    </div>
+  </section>
+}
