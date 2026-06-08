@@ -1,1 +1,16 @@
+.packages-page {
+  background: var(--color-surface);
+}
 
+.packages-page__intro {
+  display: grid;
+  gap: 1rem;
+  margin-inline: auto;
+  max-width: 50rem;
+  text-align: center;
+}
+
+.packages-page__intro p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}

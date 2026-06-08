@@ -1,6 +1,15 @@
 <app-page-header title="Packages" />
-<section class="page-section">
-  <div class="container">
+
+<section class="page-section packages-page">
+  <div class="container content-stack">
+    <div class="packages-page__intro">
+      <app-section-heading eyebrow="Packages" title="Explore Our Tour Packages" align="center" />
+      <p>
+        Choose a Sri Lanka-focused travel idea as a starting point, then contact Richwing Tours
+        to personalize the route, dates, hotels, transport, and experiences.
+      </p>
+    </div>
+
     <app-package-grid [packages]="packages" />
   </div>
 </section>

@@ -6,7 +6,10 @@ export interface TourPackage {
   location: string;
   duration: string;
   people: string;
+  description: string;
   image: Asset;
+  ctaLabel?: string;
+  ctaPath?: string;
   price?: string;
   rating?: number;
   reviewCount?: number;

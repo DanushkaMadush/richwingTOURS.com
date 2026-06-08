@@ -1,7 +1,30 @@
-<article class="card">
+<article class="package-card card">
   <img [src]="tourPackage.image.src" [alt]="tourPackage.image.alt" />
-  <div class="card__body">
+
+  <div class="package-card__meta" aria-label="Package details">
+    <span>{{ tourPackage.location }}</span>
+    <span>{{ tourPackage.duration }}</span>
+    <span>{{ tourPackage.people }}</span>
+  </div>
+
+  <div class="card__body package-card__body">
     <h3>{{ tourPackage.title }}</h3>
-    <p>{{ tourPackage.location }} | {{ tourPackage.duration }} | {{ tourPackage.people }}</p>
+    <p>{{ tourPackage.description }}</p>
+
+    <div class="package-card__footer">
+      @if (tourPackage.rating && tourPackage.reviewCount) {
+        <span class="package-card__rating">
+          ★ {{ tourPackage.rating }} <small>({{ tourPackage.reviewCount }})</small>
+        </span>
+      }
+
+      @if (tourPackage.price) {
+        <strong>{{ tourPackage.price }}</strong>
+      }
+    </div>
+
+    @if (tourPackage.ctaLabel && tourPackage.ctaPath) {
+      <a [routerLink]="tourPackage.ctaPath">{{ tourPackage.ctaLabel }}</a>
+    }
   </div>
 </article>
