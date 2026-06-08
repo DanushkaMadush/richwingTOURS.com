@@ -31,11 +31,15 @@
               }
             ],
             "styles": [
+              "src/styles/fonts.scss",
               "src/styles.scss"
             ]
           },
           "configurations": {
             "production": {
+              "optimization": {
+                "fonts": false
+              },
               "budgets": [
                 {
                   "type": "initial",

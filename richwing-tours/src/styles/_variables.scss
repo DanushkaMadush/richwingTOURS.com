@@ -9,5 +9,10 @@
   --container-max-width: 1140px;
   --container-padding: 1rem;
   --section-padding: clamp(3rem, 6vw, 5rem);
-  --font-family-base: 'Poppins', Arial, sans-serif;
+  --font-family-base: 'Poppins', sans-serif;
+  --font-family-heading: var(--font-family-base);
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 }
