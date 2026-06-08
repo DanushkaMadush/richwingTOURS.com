@@ -1,0 +1,17 @@
+<header class="navbar">
+  <nav class="container navbar__inner" aria-label="Primary navigation">
+    <a class="navbar__brand" routerLink="/">richwing<span>TOURS</span></a>
+
+    <div class="navbar__links">
+      @for (item of navigationItems; track item.path) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+        >
+          {{ item.label }}
+        </a>
+      }
+    </div>
+  </nav>
+</header>

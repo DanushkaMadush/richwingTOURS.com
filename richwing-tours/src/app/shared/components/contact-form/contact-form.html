@@ -1,0 +1,27 @@
+<form class="contact-form content-stack" [formGroup]="form" (ngSubmit)="submit()">
+  <label>
+    Name
+    <input type="text" formControlName="name" />
+  </label>
+
+  <label>
+    Email
+    <input type="email" formControlName="email" />
+  </label>
+
+  <label>
+    Subject
+    <input type="text" formControlName="subject" />
+  </label>
+
+  <label>
+    Message
+    <textarea rows="5" formControlName="message"></textarea>
+  </label>
+
+  <button type="submit">Prepare message</button>
+
+  @if (submitted) {
+    <p>Contact form foundation only. Backend integration is pending migration.</p>
+  }
+</form>

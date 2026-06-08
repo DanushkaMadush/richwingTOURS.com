@@ -1,0 +1,5 @@
+<div class="responsive-grid">
+  @for (item of images; track item.id) {
+    <img [src]="item.image.src" [alt]="item.image.alt" />
+  }
+</div>

@@ -1,0 +1,11 @@
+.page-header {
+  background: var(--color-text);
+  color: var(--color-background);
+  padding: 4rem 0;
+}
+
+.page-header p {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+}

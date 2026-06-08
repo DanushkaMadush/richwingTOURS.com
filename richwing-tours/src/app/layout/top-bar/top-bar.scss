@@ -1,0 +1,13 @@
+.top-bar {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+.top-bar__inner {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  min-height: 2.75rem;
+}

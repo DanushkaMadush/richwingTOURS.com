@@ -1,0 +1,7 @@
+<div class="top-bar">
+  <div class="container top-bar__inner">
+    <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+    <span>{{ contact.phone }}</span>
+    <app-social-links [links]="socialLinks" />
+  </div>
+</div>

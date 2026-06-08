@@ -1,0 +1,23 @@
+<footer class="footer">
+  <div class="container footer__grid">
+    <section>
+      <h2>richwingTOURS</h2>
+      <p>Create timeless memories in nature's embrace.</p>
+      <app-social-links [links]="socialLinks" />
+    </section>
+
+    <section>
+      <h3>Explore</h3>
+      @for (link of links; track link.path) {
+        <a [routerLink]="link.path">{{ link.label }}</a>
+      }
+    </section>
+
+    <section>
+      <h3>Contact</h3>
+      <p>{{ contact.address }}</p>
+      <p>{{ contact.phone }}</p>
+      <p>{{ contact.email }}</p>
+    </section>
+  </div>
+</footer>

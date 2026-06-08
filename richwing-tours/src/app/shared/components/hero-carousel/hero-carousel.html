@@ -1,0 +1,15 @@
+<section class="hero-carousel">
+  @if (slides.length) {
+    <article>
+      <img [src]="slides[0].image.src" [alt]="slides[0].image.alt" />
+      <h1>{{ slides[0].title }}</h1>
+      @if (slides[0].subtitle) {
+        <p>{{ slides[0].subtitle }}</p>
+      }
+    </article>
+  } @else {
+    <div class="container">
+      <p>Hero carousel placeholder. Legacy slides pending migration.</p>
+    </div>
+  }
+</section>
