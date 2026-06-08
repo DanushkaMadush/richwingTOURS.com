@@ -1,7 +1,25 @@
 <app-page-header title="Contact" />
-<section class="page-section">
-  <div class="container content-stack">
-    <p>{{ contact.email }} | {{ contact.phone }}</p>
-    <app-contact-form />
+
+<section class="page-section contact-page">
+  <div class="container contact-page__grid">
+    <aside class="contact-page__info content-stack">
+      <app-section-heading eyebrow="Contact" title="Contact Us For Any Query" />
+      <p>
+        Planning a Sri Lanka tour, transport, accommodation, or custom itinerary?
+        Send us your details and we will help shape the next step.
+      </p>
+
+      <div class="contact-page__details">
+        <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+        <a [href]="'tel:' + contact.phone.replaceAll(' ', '')">{{ contact.phone }}</a>
+        <span>{{ contact.address }}</span>
+      </div>
+
+      <app-social-links [links]="socialLinks" />
+    </aside>
+
+    <section class="contact-page__form" aria-label="Contact form">
+      <app-contact-form />
+    </section>
   </div>
 </section>
