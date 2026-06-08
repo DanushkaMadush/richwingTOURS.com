@@ -1,5 +1,17 @@
+figure {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  margin: 0;
+  overflow: hidden;
+}
+
 img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  transition: transform 0.25s ease;
   width: 100%;
+}
+
+figure:hover img {
+  transform: scale(1.04);
 }
