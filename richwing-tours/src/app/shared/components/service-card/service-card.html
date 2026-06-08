@@ -2,4 +2,7 @@
   <p class="service-card__icon">{{ service.icon }}</p>
   <h3>{{ service.title }}</h3>
   <p>{{ service.description }}</p>
+  @if (service.ctaLabel && service.ctaPath) {
+    <a [routerLink]="service.ctaPath">{{ service.ctaLabel }}</a>
+  }
 </article>

@@ -3,5 +3,6 @@
   <div class="card__body">
     <h3>{{ destination.name }}</h3>
     <p>{{ destination.summary }}</p>
+    <a routerLink="/destinations" [fragment]="destination.id">Explore destination</a>
   </div>
 </article>

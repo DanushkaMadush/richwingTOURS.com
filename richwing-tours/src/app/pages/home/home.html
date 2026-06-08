@@ -1,6 +1,71 @@
-<section class="page-section">
-  <div class="container">
-    <app-section-heading eyebrow="Home" title="Home page foundation" />
-    <p>Legacy home page sections will be migrated in the next pass.</p>
+<app-hero-carousel [slides]="heroSlides" ctaLabel="Book Now" ctaPath="/contact" />
+
+<section class="page-section home-about">
+  <div class="container home-about__grid">
+    <div class="home-about__media">
+      <img class="home-about__primary" [src]="aboutIntro.primaryImage.src" [alt]="aboutIntro.primaryImage.alt" />
+      <div class="home-about__thumbs">
+        @for (image of aboutIntro.supportingImages; track image.src) {
+          <img [src]="image.src" [alt]="image.alt" />
+        }
+      </div>
+    </div>
+
+    <div class="home-about__content content-stack">
+      <app-section-heading [eyebrow]="aboutIntro.eyebrow" [title]="aboutIntro.title" />
+      <p>{{ aboutIntro.description }}</p>
+      <a class="home-cta" routerLink="/contact">Book Now</a>
+    </div>
   </div>
 </section>
+
+<section class="page-section home-section home-section--surface">
+  <div class="container content-stack">
+    <app-section-heading eyebrow="Why Choose Us" title="Travel benefits built around your journey" align="center" />
+    <app-feature-grid [features]="features" />
+  </div>
+</section>
+
+<section class="page-section home-section">
+  <div class="container content-stack">
+    <div class="home-section__header">
+      <app-section-heading eyebrow="Destination" title="Explore Top Destination" />
+      <a routerLink="/destinations">Explore Sri Lanka's Top Destinations</a>
+    </div>
+    <app-destination-grid [destinations]="destinationPreview" />
+  </div>
+</section>
+
+<section class="page-section home-section home-section--surface">
+  <div class="container content-stack">
+    <div class="home-section__header">
+      <app-section-heading eyebrow="Services" title="Tours & Travel Services" />
+      <a routerLink="/services">Explore our travel services</a>
+    </div>
+    <app-service-grid [services]="servicePreview" />
+  </div>
+</section>
+
+<app-offer-banner
+  [eyebrow]="offer.eyebrow"
+  [title]="offer.title"
+  [description]="offer.description"
+  [ctaLabel]="offer.ctaLabel"
+  [ctaPath]="offer.ctaPath"
+/>
+
+<section class="page-section home-section">
+  <div class="container content-stack">
+    <app-section-heading eyebrow="Guides" title="Our Travel Guides" align="center" />
+    <app-guide-grid [members]="teamMembers" />
+  </div>
+</section>
+
+@if (testimonials.length) {
+  <section class="page-section home-section home-section--surface" id="customer-stories">
+    <div class="container content-stack">
+      <app-section-heading eyebrow="Customer Stories" title="What Say Our Clients" align="center" />
+      <p>Testimonials will render here once migrated.</p>
+    </div>
+  </section>
+}

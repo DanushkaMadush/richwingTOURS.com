@@ -1,5 +1,32 @@
 .offer-banner {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.34)),
+    url('/images/others/22.jpg') center / cover;
+  color: var(--color-background);
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.offer-banner .content-stack {
+  max-width: 42rem;
+}
+
+.offer-banner p:first-child {
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.offer-banner h2 {
+  color: var(--color-background);
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.offer-banner a {
   background: var(--color-primary);
   color: var(--color-background);
-  padding: 4rem 0;
+  font-weight: 700;
+  justify-self: start;
+  padding: 0.9rem 1.35rem;
+  text-decoration: none;
 }

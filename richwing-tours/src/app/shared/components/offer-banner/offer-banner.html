@@ -5,5 +5,8 @@
     @if (description) {
       <p>{{ description }}</p>
     }
+    @if (ctaLabel) {
+      <a [routerLink]="ctaPath">{{ ctaLabel }}</a>
+    }
   </div>
 </section>

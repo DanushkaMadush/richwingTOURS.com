@@ -1,12 +1,36 @@
 <section class="hero-carousel">
   @if (slides.length) {
-    <article>
-      <img [src]="slides[0].image.src" [alt]="slides[0].image.alt" />
-      <h1>{{ slides[0].title }}</h1>
-      @if (slides[0].subtitle) {
-        <p>{{ slides[0].subtitle }}</p>
-      }
+    <article class="hero-carousel__slide">
+      <img [src]="activeSlide().image.src" [alt]="activeSlide().image.alt" />
+      <div class="hero-carousel__overlay">
+        <div class="container hero-carousel__content">
+          <p>Explore Sri Lanka</p>
+          <h1>{{ activeSlide().title }}</h1>
+          @if (activeSlide().subtitle) {
+            <span>{{ activeSlide().subtitle }}</span>
+          }
+          <a [routerLink]="ctaPath">{{ ctaLabel }}</a>
+        </div>
+      </div>
     </article>
+
+    @if (slides.length > 1) {
+      <div class="hero-carousel__controls" aria-label="Hero carousel controls">
+        <button type="button" (click)="previous()">Prev</button>
+        <button type="button" (click)="next()">Next</button>
+      </div>
+
+      <div class="hero-carousel__dots" aria-label="Hero slide navigation">
+        @for (slide of slides; track slide.title; let index = $index) {
+          <button
+            type="button"
+            [class.is-active]="index === activeIndex()"
+            [attr.aria-label]="'Show slide ' + (index + 1)"
+            (click)="goTo(index)"
+          ></button>
+        }
+      </div>
+    }
   } @else {
     <div class="container">
       <p>Hero carousel placeholder. Legacy slides pending migration.</p>
